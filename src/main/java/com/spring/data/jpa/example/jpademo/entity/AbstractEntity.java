@@ -9,6 +9,10 @@ import javax.persistence.*;
 @Data
 @MappedSuperclass
 public class AbstractEntity {
+
+    public AbstractEntity() {
+    }
+
     /**
      * ID
      */

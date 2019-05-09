@@ -1,6 +1,5 @@
 package com.spring.data.jpa.example.jpademo.entity;
 
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -13,12 +12,11 @@ import java.time.ZonedDateTime;
 @Data
 @Entity
 @Table(name = "t_user")
-@Builder
 public class User extends AbstractEntity{
 
     private String name;
 
-    private Integer apg;
+    private Integer age;
 
     private LocalDate createDate;
 
@@ -28,5 +26,8 @@ public class User extends AbstractEntity{
 
     private ZonedDateTime createZoneDateTime;
 
+    private Boolean enable = false;
+
+    private EnableEnum enableEnum = EnableEnum.ENABLE;
 
 }
