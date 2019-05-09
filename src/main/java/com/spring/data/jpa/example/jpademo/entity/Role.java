@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Role extends AbstractEntity{
     private String name;
 
     @OneToMany()
+    @OrderBy("name desc")
     private List<User> users;
 
     public void removeUser(User user){

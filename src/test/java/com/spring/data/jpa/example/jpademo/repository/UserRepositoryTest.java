@@ -6,6 +6,8 @@ import com.spring.data.jpa.example.jpademo.entity.User;
 import com.spring.data.jpa.example.jpademo.vo.UserVO;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +21,21 @@ public class UserRepositoryTest extends AbstractTest{
     @Autowired private UserRepository userRepository;
 
     @Autowired private RoleRepository roleRepository;
+
+    @Autowired private CacheManager cacheManager;
+
+    //缓存
+    @Test
+    public void testCacheManager(){
+        User u = new User();
+        u.setName("chenwei");
+        u.setAge(20);
+        User ur = userRepository.save(u);
+        assertEquals(u,ur);
+        userRepository.findUserByNameCache("chenwei");
+         Cache cache = cacheManager.getCache("disname");
+         assertEquals(cache.get("chenwei").get(),u);
+    }
 
     @Test
     public void testFindRoleByUsersMember(){

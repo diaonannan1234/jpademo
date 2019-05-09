@@ -2,9 +2,9 @@ package com.spring.data.jpa.example.jpademo.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
+@Repository
 public class JdbcRepositoryImpl implements JdbcRepository {
 
     @Autowired  private JdbcTemplate jdbcTemplate;

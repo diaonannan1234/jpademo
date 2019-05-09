@@ -7,6 +7,12 @@ import com.spring.data.jpa.example.jpademo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.support.SimpleCacheManager;
+import org.springframework.context.annotation.Bean;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
@@ -14,8 +20,10 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
+import java.util.Collections;
 
 @SpringBootApplication
+@EnableCaching
 public class JpademoApplication {
 	@Autowired
 	private UserRepository userRepository;
@@ -24,6 +32,17 @@ public class JpademoApplication {
 	private RoleRepository roleRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(JpademoApplication.class, args);
+	}
+
+	@Bean
+	public CacheManager cacheManager() {
+
+		Cache cache = new ConcurrentMapCache("disname");
+
+		SimpleCacheManager manager = new SimpleCacheManager();
+		manager.setCaches(Arrays.asList(cache));
+
+		return manager;
 	}
 
 	@PostConstruct

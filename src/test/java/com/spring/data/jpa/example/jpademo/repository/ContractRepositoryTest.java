@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class ContractRepositoryTest extends AbstractTest{
@@ -39,6 +42,16 @@ public class ContractRepositoryTest extends AbstractTest{
         assertEquals(rows,1);
         User uu = userRepository.findById(u.getId()).orElseThrow(()->new NullPointerException());
         assertTrue(uu.getAge()==80);
+    }
+
+    @Test
+    public void testCreateContract(){
+        Contract contract = new Contract();
+        contract.setContractName("dsdflsdf");
+        contract.setText("ekwicxlkvlskdjfasdf");
+        contract.setBigDecimal(new BigDecimal("100000000000000000000000000000000000000000000000000"));
+        Contract c = contractRepository.save(contract);
+        assertNotNull(c);
     }
 
 }
