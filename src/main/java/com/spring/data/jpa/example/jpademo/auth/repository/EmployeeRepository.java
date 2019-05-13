@@ -4,11 +4,12 @@ import com.spring.data.jpa.example.jpademo.auth.entityone.Department;
 import com.spring.data.jpa.example.jpademo.auth.entityone.Employee;
 import com.spring.data.jpa.example.jpademo.auth.vo.EmployeeVO;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface EmployeeRepository extends JpaRepository<Employee,String> {
+public interface EmployeeRepository extends JpaRepository<Employee,String> ,JpaSpecificationExecutor<Employee> {
 
     //得到员工姓名的集合
     @Query("select e.name from Employee e")
