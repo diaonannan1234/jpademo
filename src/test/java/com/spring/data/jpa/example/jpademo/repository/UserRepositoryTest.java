@@ -34,7 +34,7 @@ public class UserRepositoryTest extends AbstractTest{
         assertEquals(u,ur);
         userRepository.findUserByNameCache("chenwei");
          Cache cache = cacheManager.getCache("disname");
-        // assertEquals(cache.get("chenwei").get(),u);
+         assertEquals(cache.get("chenwei").get(),u);
     }
 
     @Test

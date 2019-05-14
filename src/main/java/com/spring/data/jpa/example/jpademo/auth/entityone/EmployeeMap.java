@@ -12,7 +12,7 @@ import java.util.*;
 public class EmployeeMap extends AbstractEntity{
 
     @Id
-    private int id;
+    private String id;
     private String name;
     private long salary;
     @Temporal(TemporalType.DATE)

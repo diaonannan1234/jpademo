@@ -6,10 +6,21 @@ import com.spring.data.jpa.example.jpademo.auth.vo.EmployeeVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 public interface EmployeeRepository extends JpaRepository<Employee,String> ,JpaSpecificationExecutor<Employee> {
+
+
+//    //Map
+//    @Query("select e.name ,value(e.phones) from Employee e")
+//    List<Object[]> getMap();
+//
+//    //Map
+//    @Query("select e.name,key(e.phones) ,value(e.phones) from Employee e")
+//    List<Object[]> getMap1();
+
 
     //得到员工姓名的集合
     @Query("select e.name from Employee e")
