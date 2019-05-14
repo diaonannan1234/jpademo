@@ -31,7 +31,7 @@ public interface RoleRepository extends JpaRepository<Role,String>{
 
     //找到角色中用户组中所有用户年龄满足条件（小于入参）
     @Query("select r from Role r where :age > ALL (select u.age from r.users u)")
-    List<Role> findRoleByAgeAll(@Param("age")Integer age);
+    List<Role>  findRoleByAgeAll(@Param("age")Integer age);
 
     //找到角色中用户组中用户年龄大于入参的所有用户，查出的用户存在的角色出现在结果集中。
     @Query("select r from Role r where  exists (select u.age from r.users u where u.age > :age)")

@@ -22,16 +22,16 @@ public interface UserRepository extends JpaRepository<User,String> {
     @Query("select u from User u where u.name = :name")
     List<User> findUserByNameCache(@Param("name") String name);
 
-    //user 不能为空
+    //对象入参 user 不能为空
     @Query("select new com.spring.data.jpa.example.jpademo.vo.UserVO(u.id,u.name,u.age)  from  User u where u.name = :#{#user.name} ")
     UserVO findUser(@Param("user") User user);
-
+    //对象入参
     @Query("select new com.spring.data.jpa.example.jpademo.vo.UserVO(u.id,u.name,u.age)  from User u where u.age = :#{#user == null?0:#user.age}")
     List<UserVO> findUsersByAge(@Param("user") User user);
-
+    // Boolean入参
     @Query("select u from User u where u.enable = :enable")
      List<User> findUserByEnadleBoolean(@Param("enable")Boolean enable);
-
+   //Emum 入参
     @Query("select u from User u where u.enableEnum = :enableEnum")
     List<User> findUserByEnableEnum(@Param("enableEnum")EnableEnum enableEnum);
 

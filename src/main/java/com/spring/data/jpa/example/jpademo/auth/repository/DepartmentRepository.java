@@ -12,6 +12,7 @@ public interface DepartmentRepository extends JpaRepository<Department,String> {
     @Query("select d from Department d where size(d.employees) = 2 ")
     List<Department> getDepartmentSize();
 
+    //部门的平均薪水
     @Query("select d.name,avg(e.salary) from Department d join d.employees e group by d.name")
     List<Object[]> getDepartmentGroupbyEmpSalary();
 }

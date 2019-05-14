@@ -6,7 +6,6 @@ import com.spring.data.jpa.example.jpademo.auth.vo.EmployeeVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -30,10 +29,11 @@ public interface EmployeeRepository extends JpaRepository<Employee,String> ,JpaS
     @Query("select distinct e.department from Employee e ")
     List<Department>  getEmployeeInDepartment();
 
+    // 检索出员工姓名和薪水，结果集用数组表示。
     @Query("select e.name,e.salary from Employee e ")
     List<Object[]> getEmployeeNameSalary();
 
-
+    // 检索出员工姓名和薪水，结果集用EmployeeVO对象封装
     @Query("select new com.spring.data.jpa.example.jpademo.auth.vo.EmployeeVO" +
             "(e.name,e.salary) from Employee e ")
     List<EmployeeVO> getEmployeeNameSalaryVO();
@@ -45,6 +45,7 @@ public interface EmployeeRepository extends JpaRepository<Employee,String> ,JpaS
 //    @Query("select distinct e.name, value( p) from Employee e, in( e.phones) p")
 //   Map getE();
 
+    // 使用 join fetch
     @Query("select e from Employee e join fetch e.address")
     List<Employee> getEmployFetch();
 
