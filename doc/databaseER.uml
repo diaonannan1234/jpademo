@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.ADDRESS</OriginalElement>
+  <nodes>
+    <node x="228.25" y="196.0">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE</node>
+    <node x="517.4166666666667" y="0.0">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.ADDRESS</node>
+    <node x="501.0" y="448.0">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE_MAP</node>
+    <node x="28.0" y="506.0">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PROJECT_EMPLOYEES</node>
+    <node x="268.0" y="482.5">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PHONE</node>
+    <node x="303.1666666666667" y="34.5">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.DEPARTMENT</node>
+    <node x="0.0" y="242.0">08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PROJECT</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE_MAP" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.DEPARTMENT">
+      <point x="0.0" y="-96.0" />
+      <point x="606.5" y="428.0" />
+      <point x="579.6296296296297" y="428.0" />
+      <point x="579.6296296296297" y="166.0" />
+      <point x="427.6666666666667" y="166.0" />
+      <point x="41.5" y="38.5" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PROJECT_EMPLOYEES" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE">
+      <point x="55.0" y="-38.0" />
+      <point x="193.0" y="428.0" />
+      <point x="316.0" y="428.0" />
+      <point x="-29.25" y="96.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PHONE" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE">
+      <point x="0.0" y="-61.5" />
+      <point x="29.25" y="96.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PROJECT_EMPLOYEES" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.PROJECT">
+      <point x="-55.0" y="-38.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE_MAP" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE">
+      <point x="-70.33333333333326" y="-96.0" />
+      <point x="536.1666666666667" y="428.0" />
+      <point x="433.0" y="428.0" />
+      <point x="87.75" y="96.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.ADDRESS">
+      <point x="58.5" y="-96.0" />
+      <point x="403.75" y="176.0" />
+      <point x="560.6666666666667" y="176.0" />
+      <point x="-43.25" y="73.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE_MAP" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.ADDRESS">
+      <point x="70.33333333333337" y="-96.0" />
+      <point x="676.8333333333334" y="428.0" />
+      <point x="647.1666666666667" y="428.0" />
+      <point x="43.25" y="73.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE">
+      <point x="-87.75" y="96.0" />
+      <point x="257.5" y="408.0" />
+      <point x="208.25" y="408.0" />
+      <point x="208.25" y="292.0" />
+      <point x="-117.0" y="-0.0" />
+    </edge>
+    <edge source="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.EMPLOYEE" target="08fd4601-9843-413b-a6ba-a28582766fa7.TABLE:TEST.PUBLIC.DEPARTMENT">
+      <point x="-58.5" y="-96.0" />
+      <point x="286.75" y="176.0" />
+      <point x="344.6666666666667" y="176.0" />
+      <point x="-41.5" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="356.0" y="320.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
