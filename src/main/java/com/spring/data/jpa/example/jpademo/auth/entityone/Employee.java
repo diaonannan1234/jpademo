@@ -31,7 +31,7 @@ public class Employee extends AbstractEntity{
 //    //private Map<String,Phone> phones = new HashMap<String,Phone>();
 //    private Map<Employee,Phone> phones = new HashMap<>();
 
-    @ManyToOne
+  @ManyToOne
     private Department department;
 
     //自关联
